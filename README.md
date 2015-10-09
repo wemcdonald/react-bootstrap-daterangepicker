@@ -20,11 +20,12 @@ A date/time picker for react (using bootstrap). This is a react port of:
 
 ```javascript
 var React = require('react');
+var moment = require('moment');
 var DateRangePicker = require('react-bootstrap-daterangepicker');
 var someReactComponent = React.createClass({
     render: function () {
         return (
-            <DateRangePicker startDate="1/1/2014" endDate="3/1/2014">
+            <DateRangePicker startDate={moment('1/1/2014')} endDate={moment('3/1/2014')}>
                 <div>Click Me To Open Picker!</div>
             </DateRangePicker>
         );
@@ -32,10 +33,10 @@ var someReactComponent = React.createClass({
 });
 ```
 
-3) Include the daterangepicker CSS in your project somewhere. The CSS file is here: [daterangepicker-bs3.css](https://raw.githubusercontent.com/skratchdot/react-bootstrap-daterangepicker/master/css/daterangepicker-bs3.css) (don't hotlink- download and host your own copy)
+3) Include the daterangepicker CSS in your project somewhere. The CSS file is here: [daterangepicker.css](https://raw.githubusercontent.com/skratchdot/react-bootstrap-daterangepicker/master/css/daterangepicker.css) (don't hotlink- download and host your own copy)
 
 ```html
-<link rel="stylesheet" href="daterangepicker-bs3.css" type="text/css" />
+<link rel="stylesheet" href="daterangepicker.css" type="text/css" />
 ```
 
 ## Documentation
@@ -45,9 +46,11 @@ For in depth documentation, see the original
 
 You can pass all the same props as the original plugin:
 
-- **startDate, endDate, minDate, maxDate, dateLimit, timeZone, showDropdowns, showWeekNumbers,
-  timePicker, timePickerIncrement, timePicker12Hour, timePickerSeconds, ranges, opens, buttonClasses,
-  applyClass, cancelClass, format, separator, locale, singleDatePicker, parentEl**
+- **&lt;input&gt;, applyClass, autoApply, autoUpdateInput, buttonClasses,
+  cancelClass, dateLimit, drops, endDate, isInvalidDate, linkedCalendars,
+  locale, maxDate, minDate, opens, parentEl, ranges, showDropdowns,
+  showWeekNumbers, singleDatePicker, startDate, template, timePicker,
+  timePicker24Hour, timePickerIncrement, timePickerSeconds, timeZone**
 
 You can listen to the following 7 events:
 
@@ -77,9 +80,22 @@ var someReactComponent = React.createClass({
 ```
 
 
+## Release Notes
+
+Release notes can be found in the
+[Changelog](https://github.com/skratchdot/react-bootstrap-daterangepicker/blob/master/CHANGELOG.md).
+
+We will try to release a new version of this project with each new
+[React](http://facebook.github.io/react/index.html)
+release.  We will bump the major version with each React release.  If you are using
+a specific version of `react` or `react-bootstrap`, make sure you specify the correct
+version of `react-bootstrap-daterangepicker` in your package.json file.
+
+
 ## Links
 
 - [Source Code](https://github.com/skratchdot/react-bootstrap-daterangepicker)
+- [Changelog](https://github.com/skratchdot/react-bootstrap-daterangepicker/blob/master/CHANGELOG.md)
 - [Live Demo](http://projects.skratchdot.com/react-bootstrap-daterangepicker/)
 - [Original Plugin](https://github.com/dangrossman/bootstrap-daterangepicker)
 
